@@ -1,4 +1,5 @@
 import 'package:apple_student_community/Screens/HomeScreen/components/body.dart';
+import 'package:apple_student_community/util/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CupertinoColors.darkBackgroundGray,
+      backgroundColor: bg,
       appBar: buildAppBar(),
       drawer: MyDrawer(
         name: 'Srijan Samridh',
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
 
 AppBar buildAppBar() {
   return AppBar(
-    backgroundColor: CupertinoColors.darkBackgroundGray,
+    backgroundColor: bg,
     elevation: 0,
     leading: Builder(
       builder: (BuildContext context) {

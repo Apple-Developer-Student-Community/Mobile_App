@@ -1,5 +1,7 @@
+import 'package:apple_student_community/Screens/detailsScreen/components/social_media_icon.dart';
 import 'package:apple_student_community/util/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OrganisingHead extends StatelessWidget {
@@ -37,6 +39,12 @@ class OrganisingHead extends StatelessWidget {
                       "Chief Org & Dev Relation",
                       style: GoogleFonts.laila(color: Colors.grey),
                     ),
+                    Row(
+                      children: [
+                        SocialMediaIcon(icon: FontAwesomeIcons.linkedinIn, onTap: () {  },),
+                        SocialMediaIcon(icon: FontAwesomeIcons.instagram, onTap: (){},)
+                      ],
+                    )
                   ],
                 ),
                 Column(
@@ -61,9 +69,19 @@ class OrganisingHead extends StatelessWidget {
                     height: 100,
                   ),
                 ),
-                Text(""),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 25.0),
+                    child: Text(
+                        "Hi Students!\nA lot of time people think being in Organising Team means",
+                      style: GoogleFonts.laila(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
               ],
             ),
+            Text(" just organising Events but in this community Organising team members will also learn how Human Resources Works!"
+                "\n\nThank You So much For Hearing Us!",style: GoogleFonts.laila(fontWeight: FontWeight.bold),),
           ],
         ),
       ),

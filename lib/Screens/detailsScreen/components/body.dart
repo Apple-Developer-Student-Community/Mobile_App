@@ -64,6 +64,7 @@ class _BodyState extends State<Body> {
           ),
           SizedBox(height: 20),
           OrganisingHead(size: size),
+          SizedBox(height: 20.0),
         ],
       ),
     );

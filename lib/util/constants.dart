@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+const Color bg =  Colors.black;
+const Color titleBg = Colors.grey;
 
-const LinearGradient kCardGradientBg = LinearGradient(
+LinearGradient kCardGradientBg = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomCenter,
     colors: [
-      Colors.black87,
+      Colors.grey.shade800,
       Colors.black54,
-      Colors.black38,
+      Colors.grey.shade800,
       Colors.transparent
     ]);
 
@@ -15,7 +17,7 @@ const LinearGradient kSpacialCard = LinearGradient(
     end: Alignment.bottomCenter,
     colors: [
       Colors.white30,
-      Colors.white12,
+      Colors.black38,
       Colors.white10,
       Colors.white24,
       Colors.white10,
