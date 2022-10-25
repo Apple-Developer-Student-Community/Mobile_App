@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/widgets.dart';
 
 
 class MyDrawer extends StatelessWidget {
-
-
   const MyDrawer(
       {Key? key,
-      required this.name,
-      required this.email,
-      required this.press, this.profilePicture})
+        required this.name,
+        required this.email,
+        required this.press,
+        required this.profilePicture})
       : super(key: key);
 
   final String name, email;
   final VoidCallback press;
-  final profilePicture;
+  final GoogleUserCircleAvatar profilePicture;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class MyDrawer extends StatelessWidget {
           UserAccountsDrawerHeader(
             accountName: Text(name),
             accountEmail: Text(email),
-            currentAccountPicture: const Text(""),
+            currentAccountPicture: profilePicture,
           ),
           const ListTile(
             leading: Icon(Icons.person),

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "831742840478",
+    "project_id": "applestudentcommunity-374f9",
+    "storage_bucket": "applestudentcommunity-374f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831742840478:android:d074f2a37748d0a2d7758f",
+        "android_client_info": {
+          "package_name": "com.example.apple_student_community"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831742840478-1lofe0c47ud09cun838lugunffe9f1s4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPAa8FQ4oqiTYJLdYzDJmTK5qTnJqK75c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831742840478-1lofe0c47ud09cun838lugunffe9f1s4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
