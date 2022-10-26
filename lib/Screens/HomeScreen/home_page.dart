@@ -2,6 +2,7 @@ import 'package:apple_student_community/Screens/HomeScreen/components/body.dart'
 import 'package:apple_student_community/util/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:google_sign_in/widgets.dart';
 
 import '../Components/bottom_navigation_bar.dart';
@@ -13,18 +14,20 @@ class HomePage extends StatelessWidget {
       this.name = "",
       this.email = "",
       required this.press,
-      required this.profilePicture})
+      required this.profilePicture,
+      required this.user})
       : super(key: key);
 
   final String name, email;
   final VoidCallback press;
   final GoogleUserCircleAvatar profilePicture;
+  final GoogleSignInAccount user;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bg,
-      appBar: buildAppBar(),
+      appBar: buildAppBar(user, profilePicture),
       drawer: MyDrawer(
         name: name,
         email: email,
@@ -37,7 +40,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-AppBar buildAppBar() {
+AppBar buildAppBar(GoogleSignInAccount user, GoogleUserCircleAvatar profilePicture) {
   return AppBar(
     backgroundColor: bg,
     elevation: 0,
@@ -54,10 +57,10 @@ AppBar buildAppBar() {
         );
       },
     ),
-    actions: const [
+    actions: [
       Padding(
         padding: EdgeInsets.only(right: 20.0),
-        child: Icon(CupertinoIcons.person),
+        child: user != Null? CircleAvatar(child: profilePicture) : Icon(CupertinoIcons.person),
       )
     ],
   );

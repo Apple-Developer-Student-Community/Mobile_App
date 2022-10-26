@@ -8,7 +8,7 @@ LinearGradient kCardGradientBg = LinearGradient(
     colors: [
       Colors.grey.shade800,
       Colors.black54,
-      Colors.grey.shade800,
+      // Colors.grey.shade800,
       Colors.transparent
     ]);
 
@@ -19,7 +19,7 @@ const LinearGradient kSpacialCard = LinearGradient(
       Colors.white30,
       Colors.black38,
       Colors.white10,
-      Colors.white24,
+      // Colors.white24,
       Colors.white10,
     ]);
 

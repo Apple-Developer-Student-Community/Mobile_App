@@ -69,6 +69,7 @@ class _MyAppState extends State<MyApp> {
         name: user.displayName!,
         email: user.email,
         press: signOut,
+        user: user,
       );
     } else {
       return LoginPage(press: signIn);
