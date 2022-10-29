@@ -21,6 +21,7 @@ const LinearGradient kSpacialCard = LinearGradient(
       Colors.white10,
       // Colors.white24,
       Colors.white10,
+      Colors.transparent
     ]);
 
 const LinearGradient kMemberCard = LinearGradient(

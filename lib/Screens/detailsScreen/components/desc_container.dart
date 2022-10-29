@@ -25,6 +25,7 @@ class DescContainer extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(25.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
