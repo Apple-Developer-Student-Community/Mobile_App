@@ -51,7 +51,7 @@ AppBar buildAppBar(GoogleSignInAccount user, GoogleUserCircleAvatar profilePictu
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14.0),
-              color: Colors.white12,
+              color: Colors.white10,
             ),
             child: IconButton(
               icon: const Icon(

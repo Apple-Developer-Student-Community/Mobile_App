@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
@@ -15,27 +14,22 @@ class LoginPage extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           ClipRRect(
-
             child: Image.asset(
-              'assets/images/building.jpg',
+              'assets/images/think-different-7462048__480.webp',
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Card(
-                  color: Colors.white10,
+                  color: Colors.transparent,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const SizedBox(
                         height: 10,
-                      ),
-                      Image.asset(
-                        "assets/icons/GoogleLogo.png",
-                        scale: 35,
                       ),
                       const SizedBox(height: 20),
                       Center(
@@ -53,15 +47,40 @@ class LoginPage extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: press,
                           style: ElevatedButton.styleFrom(
-                              elevation: 12.0,
-                              backgroundColor: Colors.black26,
+                              elevation: 40.0,
+                              backgroundColor: Colors.white30,
                               textStyle: const TextStyle(color: Colors.white)),
-                          child: const Text(
-                            'Login In With Google',
-                            style: TextStyle(color: Colors.white),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/icons/GoogleLogo.png",
+                                    scale: 50,
+                                  ),
+                                  SizedBox(
+                                    width: 20.0,
+                                  ),
+                                  Text(
+                                    "LOGIN WITH GOOGLE",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                    // style: GoogleFonts.laila(
+                                    //   color: Colors.grey,
+                                    //   fontWeight: FontWeight.bold,
+                                    // ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
+                      const SizedBox(height: 50),
                     ],
                   ),
                 ),
