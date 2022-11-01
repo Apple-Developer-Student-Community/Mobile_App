@@ -39,18 +39,8 @@ class MyDrawer extends StatelessWidget {
           ),
           const ListTile(
             leading: Icon(Icons.check),
-            title: Text("Blog"),
-            subtitle: Text("Check Blogs"),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, '/cam_page');
-            },
-            child: const ListTile(
-              leading: Icon(Icons.camera_alt_outlined),
-              title: Text("Scan"),
-              subtitle: Text("Tap to Know More"),
-            ),
+            title: Text("Attendance Manager"),
+            subtitle: Text("Manage Attendance"),
           ),
           const ListTile(
             leading: Icon(Icons.send),

@@ -16,6 +16,7 @@ class _FeedsPageState extends State<FeedsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black45,
+      appBar: AppBar(title: Text('Community Feed'), backgroundColor: Colors.black54,),
       body: Body(),
       bottomNavigationBar: const MyBottomNavBar(),
       floatingActionButton: FloatingActionButton(

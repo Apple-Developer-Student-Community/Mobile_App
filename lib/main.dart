@@ -72,8 +72,7 @@ class _MyAppState extends State<MyApp> {
         user: user,
       );
     } else {
-      return FeedsPage();
-      // return LoginPage(press: signIn);
+      return LoginPage(press: signIn);
     }
   }
 

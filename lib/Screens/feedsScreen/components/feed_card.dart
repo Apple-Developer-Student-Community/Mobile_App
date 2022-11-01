@@ -67,7 +67,7 @@ class FeedCard extends StatelessWidget {
                       ),
                       SizedBox(width: 15.0),
                       Icon(
-                        FontAwesomeIcons.share,
+                        Icons.send_outlined,
                         size: 22,
                         color: Colors.grey,
                       ),
