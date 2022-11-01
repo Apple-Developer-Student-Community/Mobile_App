@@ -46,14 +46,24 @@ AppBar buildAppBar(GoogleSignInAccount user, GoogleUserCircleAvatar profilePictu
     elevation: 0,
     leading: Builder(
       builder: (BuildContext context) {
-        return IconButton(
-          icon: const Icon(
-            Icons.widgets_outlined,
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(14.0),
+              color: Colors.white12,
+            ),
+            child: IconButton(
+              icon: const Icon(
+                Icons.widgets_outlined,
+                color: Colors.grey,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            ),
           ),
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-          tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
         );
       },
     ),
