@@ -53,7 +53,7 @@ class LinearNavbar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/profile');
+              Navigator.pushReplacementNamed(context, '/notification');
             },
             icon: const Icon(
               Icons.notifications,

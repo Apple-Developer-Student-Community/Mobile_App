@@ -1,4 +1,5 @@
 import 'package:apple_student_community/Screens/LoginScreen/login_page.dart';
+import 'package:apple_student_community/Screens/NotificationScreen/notification_page.dart';
 import 'package:apple_student_community/Screens/detailsScreen/team_details_page.dart';
 import 'package:flutter/material.dart';
 
@@ -57,6 +58,7 @@ class _MyAppState extends State<MyApp> {
               press: signIn,
             ),
         '/feeds': (context) => const FeedsPage(),
+        '/notification': (context) => const NotificationPage(),
       },
     );
   }

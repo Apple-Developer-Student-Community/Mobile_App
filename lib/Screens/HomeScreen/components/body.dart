@@ -72,7 +72,7 @@ class _BodyState extends State<Body> {
             children: [
               SpecialContainer(
                 onTap: () {
-                  Navigator.pushNamed(context, '/feeds');
+                  Navigator.pushNamed(context, '/notification');
                 },
                 image: Image.asset(
                   'assets/images/communityLogo.png',
