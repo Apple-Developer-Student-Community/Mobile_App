@@ -72,7 +72,8 @@ class _MyAppState extends State<MyApp> {
         user: user,
       );
     } else {
-      return LoginPage(press: signIn);
+      return FeedsPage();
+      // return LoginPage(press: signIn);
     }
   }
 
@@ -82,7 +83,6 @@ class _MyAppState extends State<MyApp> {
     }catch(e){
       print("Error: SignIn error is $e");
     }
-
   }
 
   void signOut() {

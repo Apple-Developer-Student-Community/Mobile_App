@@ -33,7 +33,7 @@ class LinearNavbar extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/home');
+              Navigator.pushReplacementNamed(context, '/');
             },
             icon: const Icon(
               Icons.home_filled,
@@ -43,7 +43,7 @@ class LinearNavbar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/feeds');
+              Navigator.pushReplacementNamed(context, '/feeds');
             },
             icon: const Icon(
               Icons.dynamic_feed_outlined,
@@ -53,7 +53,7 @@ class LinearNavbar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/profile');
+              Navigator.pushReplacementNamed(context, '/profile');
             },
             icon: const Icon(
               Icons.notifications,
