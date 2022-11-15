@@ -1,10 +1,11 @@
+import 'package:apple_student_community/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key, required this.press}) : super(key: key);
+  LoginPage({Key? key,}) : super(key: key);
 
-  final VoidCallback press;
+  final VoidCallback press = (){};
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,9 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
-                          onPressed: press,
+                          onPressed: () {
+                            signIn();
+                          },
                           style: ElevatedButton.styleFrom(
                               elevation: 40.0,
                               backgroundColor: Colors.white30,

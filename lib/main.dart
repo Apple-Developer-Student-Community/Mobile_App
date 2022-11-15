@@ -1,14 +1,15 @@
+import 'package:apple_student_community/Screens/HomeScreen/home_page.dart';
 import 'package:apple_student_community/Screens/LoginScreen/login_page.dart';
 import 'package:apple_student_community/Screens/NotificationScreen/notification_page.dart';
 import 'package:apple_student_community/Screens/detailsScreen/team_details_page.dart';
+import 'package:apple_student_community/splash.dart';
 import 'package:flutter/material.dart';
 
-import 'Screens/HomeScreen/home_page.dart';
 import 'Screens/feedsScreen/feeds_page.dart';
 
+import 'authentication.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,8 +19,6 @@ void main() async {
   runApp(const MyApp());
 }
 
-final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -28,23 +27,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  GoogleSignInAccount? _currentUser;
-
-  @override
-  void initState() {
-    _googleSignIn.onCurrentUserChanged.listen((account) {
-      setState(() {
-        _currentUser = account;
-      });
-    });
-    _googleSignIn.signInSilently();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: _buildWidget(),
       theme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.grey,
@@ -52,41 +37,16 @@ class _MyAppState extends State<MyApp> {
         secondaryHeaderColor: Colors.orange,
       ),
       debugShowCheckedModeBanner: false,
+      initialRoute: '/splash',
       routes: {
+        '/': (context) => CheckAuth(),
+        '/home': (context) => HomePage(),
         '/teamDetails': (context) => const TeamDetailsPage(),
-        '/login': (context) => LoginPage(
-              press: signIn,
-            ),
+        '/login': (context) => LoginPage(),
         '/feeds': (context) => const FeedsPage(),
         '/notification': (context) => const NotificationPage(),
+        '/splash': (context) => SplashScreen(),
       },
     );
-  }
-
-  Widget _buildWidget() {
-    GoogleSignInAccount? user = _currentUser;
-    if (user != null) {
-      return HomePage(
-        profilePicture: GoogleUserCircleAvatar(identity: user),
-        name: user.displayName!,
-        email: user.email,
-        press: signOut,
-        user: user,
-      );
-    } else {
-      return LoginPage(press: signIn);
-    }
-  }
-
-  void signIn() async{
-    try{
-      await _googleSignIn.signIn();
-    }catch(e){
-      print("Error: SignIn error is $e");
-    }
-  }
-
-  void signOut() {
-    _googleSignIn.disconnect();
   }
 }

@@ -75,7 +75,7 @@ class _BodyState extends State<Body> {
                   Navigator.pushNamed(context, '/notification');
                 },
                 image: Image.asset(
-                  'assets/images/communityLogo.png',
+                  'assets/icons/communityLogo.png',
                   width: 120,
                 ),
                 title: 'Apple Developer Student Community!',
