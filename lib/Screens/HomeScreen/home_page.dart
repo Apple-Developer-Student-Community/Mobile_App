@@ -2,18 +2,32 @@ import 'package:apple_student_community/Screens/HomeScreen/components/body.dart'
 import 'package:apple_student_community/util/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
-import '../../authentication.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../Components/bottom_navigation_bar.dart';
 import '../Components/drawer.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({
     Key? key,
   }) : super(key: key);
 
-  final GoogleSignInAccount? user = currentUser;
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  User? user;
+
+  @override
+  void initState() {
+    super.initState();
+    User? newUser = FirebaseAuth.instance.currentUser;
+    setState(() {
+      user = newUser;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +40,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-AppBar buildAppBar(
-    GoogleSignInAccount user) {
+AppBar buildAppBar(dynamic user) {
   return AppBar(
     backgroundColor: bg,
     elevation: 0,
@@ -58,7 +71,12 @@ AppBar buildAppBar(
       Padding(
         padding: EdgeInsets.only(right: 20.0),
         child: user != Null
-            ? CircleAvatar(child: GoogleUserCircleAvatar(identity: user))
+            ? CircleAvatar(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(50),
+                  child: Image.network(user.photoURL),
+                ),
+              )
             : Icon(CupertinoIcons.person),
       )
     ],

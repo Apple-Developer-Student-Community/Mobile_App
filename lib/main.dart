@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 
 import 'Screens/feedsScreen/feeds_page.dart';
 
-import 'authentication.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -39,8 +38,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash',
       routes: {
-        '/': (context) => CheckAuth(),
-        '/home': (context) => HomePage(),
+        '/': (context) => HomePage(),
         '/teamDetails': (context) => const TeamDetailsPage(),
         '/login': (context) => LoginPage(),
         '/feeds': (context) => const FeedsPage(),

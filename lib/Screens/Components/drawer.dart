@@ -1,6 +1,6 @@
 import 'package:apple_student_community/authentication.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class MyDrawer extends StatefulWidget {
   MyDrawer({
@@ -12,14 +12,25 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-  String name = "", email = "";
+  String name = "", email = "", profileURL = "";
+  User? user;
+
+  @override
+  void initState() {
+    super.initState();
+    User? newUser = FirebaseAuth.instance.currentUser;
+    setState(() {
+      user = newUser;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    GoogleSignInAccount? user = currentUser;
+    final user = this.user;
     if (user != null) {
       name = user.displayName!;
-      email = user.email;
+      email = user.email!;
+      profileURL = user.photoURL!;
     }
     return Drawer(
       child: ListView(
@@ -28,7 +39,12 @@ class _MyDrawerState extends State<MyDrawer> {
           UserAccountsDrawerHeader(
             accountName: Text(name),
             accountEmail: Text(email),
-            currentAccountPicture: GoogleUserCircleAvatar(identity: user!),
+            currentAccountPicture: CircleAvatar(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.network(profileURL),
+              ),
+            ),
           ),
           const ListTile(
             leading: Icon(Icons.person),
@@ -52,8 +68,12 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             leading: const Icon(Icons.settings),
-            title:
-                GestureDetector(onTap: signOut, child: const Text("Sign out")),
+            title: GestureDetector(
+              onTap: (){
+                signOut(context);
+              },
+              child: const Text("Sign out"),
+            ),
           ),
         ],
       ),

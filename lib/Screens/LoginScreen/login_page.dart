@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({Key? key,}) : super(key: key);
-
-  final VoidCallback press = (){};
+  LoginPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,11 @@ class LoginPage extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           ClipRRect(
-            child: Image.asset(
-              'assets/images/think-different-7462048__480.webp',
+            child: FittedBox(
+              fit: BoxFit.fitHeight,
+              child: new Image.asset(
+                'assets/images/space-black-apple-watch-over-black-iphone-x.jpg',
+              ),
             ),
           ),
           Padding(
@@ -47,43 +50,33 @@ class LoginPage extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
                           onPressed: () {
-                            signIn();
+                            signInWithGoogle(context);
                           },
                           style: ElevatedButton.styleFrom(
                               elevation: 40.0,
-                              backgroundColor: Colors.white30,
+                              backgroundColor: Colors.transparent,
                               textStyle: const TextStyle(color: Colors.white)),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Center(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    "assets/icons/GoogleLogo.png",
-                                    scale: 50,
-                                  ),
-                                  SizedBox(
-                                    width: 20.0,
-                                  ),
-                                  Text(
-                                    "LOGIN WITH GOOGLE",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                    // style: GoogleFonts.laila(
-                                    //   color: Colors.grey,
-                                    //   fontWeight: FontWeight.bold,
-                                    // ),
-                                  ),
-                                ],
+                              child: Image.asset(
+                                "assets/icons/GoogleLogo.png",
+                                scale: 50,
                               ),
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 50),
+                      Center(
+                        child: Text("CONTINUE WITH GOOGLE",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.laila(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              // fontSize: 20,
+                            )),
+                      ),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),
