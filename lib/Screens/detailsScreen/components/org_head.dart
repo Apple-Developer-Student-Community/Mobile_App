@@ -41,8 +41,14 @@ class OrganisingHead extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        SocialMediaIcon(icon: FontAwesomeIcons.linkedinIn, onTap: () {  },),
-                        SocialMediaIcon(icon: FontAwesomeIcons.instagram, onTap: (){},)
+                        SocialMediaIcon(
+                          icon: FontAwesomeIcons.linkedinIn,
+                          url: Uri.parse('https://www.google.com'),
+                        ),
+                        SocialMediaIcon(
+                          icon: FontAwesomeIcons.instagram,
+                          url: Uri.parse('https://www.google.com'),
+                        )
                       ],
                     )
                   ],
@@ -71,17 +77,21 @@ class OrganisingHead extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 25.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 18.0, vertical: 25.0),
                     child: Text(
-                        "Hi Students!\nA lot of time people think being in Organising Team means",
+                      "Hi Students!\nA lot of time people think being in Organising Team means",
                       style: GoogleFonts.laila(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
               ],
             ),
-            Text(" just organising Events but in this community Organising team members will also learn how Human Resources Works!"
-                "\n\nThank You So much For Hearing Us!",style: GoogleFonts.laila(fontWeight: FontWeight.bold),),
+            Text(
+              " just organising Events but in this community Organising team members will also learn how Human Resources Works!"
+              "\n\nThank You So much For Hearing Us!",
+              style: GoogleFonts.laila(fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),

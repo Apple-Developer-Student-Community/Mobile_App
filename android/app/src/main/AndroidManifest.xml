@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.apple_student_community">
    <application
-        android:label="Apple Community"
+        android:label="COE-OS"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -51,13 +51,15 @@ class DescContainer extends StatelessWidget {
                   Row(
                     children: [
                       SocialMediaIcon(
+                        color: Colors.black,
                         icon: FontAwesomeIcons.instagram,
-                        onTap: () {},
+                        url: Uri.parse('https://www.instagram.com/_sknd.19__/'),
                       ),
                       SizedBox(width: 5.0),
                       SocialMediaIcon(
+                        color: Colors.black,
                         icon: FontAwesomeIcons.linkedinIn,
-                        onTap: () {},
+                        url: Uri.parse('https://www.linkedin.com/in/sikand-dhingra-9089a01b0/'),
                       ),
                     ],
                   ),

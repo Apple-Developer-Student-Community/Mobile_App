@@ -16,8 +16,8 @@ class MemberContainer extends StatelessWidget {
   final Image image;
   final String title;
   final String desc;
-  final VoidCallback instaAccount;
-  final VoidCallback linkedinAccount;
+  final Uri instaAccount;
+  final Uri linkedinAccount;
 
   @override
   Widget build(BuildContext context) {
@@ -63,10 +63,10 @@ class MemberContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SocialMediaIcon(
-                    icon: FontAwesomeIcons.instagram, onTap: instaAccount,
+                    icon: FontAwesomeIcons.instagram, url: instaAccount,
                   ),
                   SocialMediaIcon(
-                    icon: FontAwesomeIcons.linkedinIn, onTap: linkedinAccount,
+                    icon: FontAwesomeIcons.linkedinIn, url: linkedinAccount,
                   )
                 ],
               ),
