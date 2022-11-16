@@ -2,9 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-void signOut(dynamic context) {
+Future<void> signOut(dynamic context) async {
   try{
-    GoogleSignIn().disconnect();
+    // await GoogleSignIn().disconnect();
+    await FirebaseAuth.instance.signOut();
     Navigator.pushReplacementNamed(context, '/login');
   }catch (e){
     print(e);

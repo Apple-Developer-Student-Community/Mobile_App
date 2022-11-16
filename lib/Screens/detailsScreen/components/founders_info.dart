@@ -10,6 +10,7 @@ class FoundersInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         MemberContainer(
           image: Image.asset('assets/images/srijanPic.png'),

@@ -6,7 +6,6 @@ import '../../HomeScreen/components/section_heading.dart';
 import 'design_members_card.dart';
 import 'founders_info.dart';
 import 'header_section.dart';
-import 'member_container.dart';
 import 'org_head.dart';
 
 class Body extends StatefulWidget {
