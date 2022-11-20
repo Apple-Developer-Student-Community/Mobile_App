@@ -4,21 +4,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../Components/bottom_navigation_bar.dart';
 
-class FeedsPage extends StatefulWidget {
+class FeedsPage extends StatelessWidget {
   const FeedsPage({Key? key}) : super(key: key);
 
-  @override
-  State<FeedsPage> createState() => _FeedsPageState();
-}
-
-class _FeedsPageState extends State<FeedsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black45,
       appBar: AppBar(title: Text('Community Feed'), backgroundColor: Colors.black54,),
       body: Body(),
-      bottomNavigationBar: const MyBottomNavBar(),
+      // bottomNavigationBar: const MyBottomNavBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.grey,

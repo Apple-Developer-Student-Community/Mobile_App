@@ -1,4 +1,5 @@
 import 'package:apple_student_community/authentication.dart';
+import 'package:apple_student_community/util/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -32,11 +33,16 @@ class _MyDrawerState extends State<MyDrawer> {
       email = user.email!;
       profileURL = user.photoURL!;
     }
+    Color color = Colors.white;
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.white38,
+              // gradient: kDrawerGradientBg,
+            ),
             accountName: Text(name),
             accountEmail: Text(email),
             currentAccountPicture: CircleAvatar(
@@ -66,13 +72,13 @@ class _MyDrawerState extends State<MyDrawer> {
             leading: Icon(Icons.send),
             title: Text("Share"),
           ),
-          ListTile(
-            leading: const Icon(Icons.settings),
-            title: GestureDetector(
-              onTap: (){
-                signOut(context);
-              },
-              child: const Text("Sign out"),
+          GestureDetector(
+            onTap: (){
+              signOut(context);
+            },
+            child: ListTile(
+              leading: const Icon(Icons.settings),
+              title: Text("Sign out", style: TextStyle(color: color)),
             ),
           ),
         ],

@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
       appBar: buildAppBar(user!),
       drawer: MyDrawer(),
       body: const Body(),
-      bottomNavigationBar: const MyBottomNavBar(),
+      // bottomNavigationBar: const MyBottomNavBar(),
     );
   }
 }

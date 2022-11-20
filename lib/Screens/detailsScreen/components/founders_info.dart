@@ -24,7 +24,7 @@ class FoundersInfo extends StatelessWidget {
           image: Image.asset('assets/images/druv.JPG'),
           title: 'Dhruv Bhatnagar',
           desc: 'Founder',
-          instaAccount: Uri.parse('https://www.google.com'),
+          instaAccount: Uri.parse('https://www.instagram.com/dhruvsaysfml/'),
           linkedinAccount: Uri.parse('https://www.linkedin.com/in/dhruvbhtngr/'),
         ),
       ],

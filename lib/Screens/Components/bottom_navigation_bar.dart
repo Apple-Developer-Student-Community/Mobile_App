@@ -1,69 +1,95 @@
+import 'package:apple_student_community/Screens/HomeScreen/home_page.dart';
+import 'package:apple_student_community/Screens/NotificationScreen/notification_page.dart';
+import 'package:apple_student_community/Screens/feedsScreen/feeds_page.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class MyBottomNavBar extends StatelessWidget {
+class MyBottomNavBar extends StatefulWidget {
   const MyBottomNavBar({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return LinearNavbar();
-      // NavigationBar(destinations: []);
-  }
+  State<MyBottomNavBar> createState() => _MyBottomNavBarState();
 }
 
-class LinearNavbar extends StatelessWidget {
-  const LinearNavbar({
-    Key? key,
-  }) : super(key: key);
-
+class _MyBottomNavBarState extends State<MyBottomNavBar> {
+  int index = 1;
+  final Screens = [
+    FeedsPage(),
+    HomePage(),
+    NotificationPage(),
+  ];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(
-        left: 10.0 * 2,
-        right: 10.0 * 2,
-        bottom: 10,
-      ),
-      height: 60,
-      decoration: const BoxDecoration(
-        color: Colors.black38,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, '/');
-            },
-            icon: const Icon(
-              Icons.home_filled,
-              color: Colors.white24,
-              // size: 18,
+    // return LinearNavbar();
+    return Scaffold(
+      body: Screens[index],
+      bottomNavigationBar: buildLinearNavBar(),
+    );
+  }
+
+  CurvedNavigationBar buildCurvedNavigationBar() {
+    return CurvedNavigationBar(
+      color: Colors.black,
+      backgroundColor: Colors.orange,
+      items: <Widget>[
+        Icon(Icons.home_filled, size: 30),
+        Icon(Icons.list, size: 30),
+        Icon(Icons.notifications, size: 30),
+      ],
+      onTap: (index) {
+        //Handle button tap
+        setState(() => this.index = index);
+      },
+    );
+  }
+
+  NavigationBarTheme buildLinearNavBar() {
+    return NavigationBarTheme(
+      data: NavigationBarThemeData(
+          indicatorColor: Colors.transparent,
+          labelTextStyle: MaterialStateProperty.all(
+              TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.orange))),
+      child: NavigationBar(
+          height: 45,
+          backgroundColor: Colors.black.withOpacity(1),
+          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+          animationDuration: Duration(seconds: 1),
+          selectedIndex: index,
+          onDestinationSelected: (index) =>
+              setState(() => this.index = index),
+          destinations: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: NavigationDestination(
+                  icon: Icon(
+                    Icons.dynamic_feed_outlined,
+                  ),
+                  selectedIcon: Icon(Icons.feed_outlined,
+                      color: Colors.orange, size: 40),
+                  label: 'Feed'),
             ),
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, '/feeds');
-            },
-            icon: const Icon(
-              Icons.dynamic_feed_outlined,
-              color: Colors.white,
-              // size: 28,
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: NavigationDestination(
+                  selectedIcon:
+                      Icon(FontAwesomeIcons.home, color: Colors.orange, size: 30,),
+                  icon: Icon(Icons.home_filled),
+                  label: 'home'),
             ),
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, '/notification');
-            },
-            icon: const Icon(
-              Icons.notifications,
-              color: Colors.white,
-              size: 28,
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: NavigationDestination(
+                  selectedIcon:
+                      Icon(Icons.circle_notifications_rounded, color: Colors.orange, size: 40),
+                  icon: Icon(
+                    Icons.notifications,
+                  ),
+                  label: 'notification'),
             ),
-          ),
-        ],
-      ),
+          ]),
     );
   }
 }

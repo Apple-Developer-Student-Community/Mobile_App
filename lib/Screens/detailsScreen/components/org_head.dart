@@ -40,14 +40,16 @@ class OrganisingHead extends StatelessWidget {
                       style: GoogleFonts.laila(color: Colors.grey),
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         SocialMediaIcon(
                           icon: FontAwesomeIcons.linkedinIn,
-                          url: Uri.parse('https://www.google.com'),
+                          url: Uri.parse('https://www.linkedin.com/in/siddharth-garg-4b6912227/'),
                         ),
+                        SizedBox(width: 10),
                         SocialMediaIcon(
                           icon: FontAwesomeIcons.instagram,
-                          url: Uri.parse('https://www.google.com'),
+                          url: Uri.parse('https://www.instagram.com/siddh_61103/'),
                         )
                       ],
                     )

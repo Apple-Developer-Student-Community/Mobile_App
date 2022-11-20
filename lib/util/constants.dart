@@ -11,6 +11,16 @@ LinearGradient kCardGradientBg = LinearGradient(
       // Colors.grey.shade800,
       Colors.transparent
     ]);
+LinearGradient kDrawerGradientBg = LinearGradient(
+    begin: Alignment.topRight,
+    end: Alignment.bottomCenter,
+    colors: [
+      Colors.white,
+      Colors.deepOrange,
+      Colors.deepPurple,
+      Colors.black54,
+
+    ]);
 
 const LinearGradient kSpacialCard = LinearGradient(
     begin: Alignment.topLeft,

@@ -1,8 +1,11 @@
+import 'package:apple_student_community/Screens/Components/bottom_navigation_bar.dart';
 import 'package:apple_student_community/Screens/HomeScreen/home_page.dart';
 import 'package:apple_student_community/Screens/LoginScreen/login_page.dart';
+import 'package:apple_student_community/Screens/NotificationScreen/error.dart';
 import 'package:apple_student_community/Screens/NotificationScreen/notification_page.dart';
+import 'package:apple_student_community/Screens/SplashScreens/buffer.dart';
 import 'package:apple_student_community/Screens/detailsScreen/team_details_page.dart';
-import 'package:apple_student_community/splash.dart';
+import 'package:apple_student_community/Screens/SplashScreens/splash.dart';
 import 'package:flutter/material.dart';
 
 import 'Screens/feedsScreen/feeds_page.dart';
@@ -31,19 +34,22 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.dark,
-        primarySwatch: Colors.grey,
+        // primarySwatch: Colors.transparent,
         primaryColor: Colors.black,
         secondaryHeaderColor: Colors.orange,
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash',
       routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => MyBottomNavBar(),
         '/teamDetails': (context) => const TeamDetailsPage(),
         '/login': (context) => LoginPage(),
         '/feeds': (context) => const FeedsPage(),
         '/notification': (context) => const NotificationPage(),
         '/splash': (context) => SplashScreen(),
+        '/loading': (context) => LoadingScreen(),
+        '/error': (context) => ErrorScreen(),
+        // '/bottomNav': (context) => MyBottomNavBar(),
       },
     );
   }
