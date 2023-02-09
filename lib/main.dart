@@ -1,5 +1,4 @@
 import 'package:apple_student_community/Screens/Components/bottom_navigation_bar.dart';
-import 'package:apple_student_community/Screens/HomeScreen/home_page.dart';
 import 'package:apple_student_community/Screens/LoginScreen/login_page.dart';
 import 'package:apple_student_community/Screens/NotificationScreen/error.dart';
 import 'package:apple_student_community/Screens/NotificationScreen/notification_page.dart';

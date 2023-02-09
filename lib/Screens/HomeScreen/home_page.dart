@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import '../Components/bottom_navigation_bar.dart';
 import '../Components/drawer.dart';
 
 class HomePage extends StatefulWidget {
