@@ -41,7 +41,7 @@ class _BodyState extends State<Body> {
           const SizedBox(height: 20.0),
 
           // search bar
-          const SearchBar(),
+          const CustomSearchBar(),
           const SizedBox(height: 20.0),
 
           // events heading
